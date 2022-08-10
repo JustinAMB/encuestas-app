@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Iniciar sesion</h2>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email:</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="su email" formControlName="email">
+        <span *ngIf="fieldNotValidate('email')" class="text-danger">{{emailErrorMsg}}</span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Contraseña:</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Su Contraseña" formControlName="password">
+        <span *ngIf="fieldNotValidate('password')" class="text-danger">{{passwordErrorMsg}}</span>
+    </div>
+
+    <button type="submit">Ingresar</button>
+    <a routerLink="/auth/register" class="link">
+        ¿No tienes cuenta?
+    </a>
+</form>
