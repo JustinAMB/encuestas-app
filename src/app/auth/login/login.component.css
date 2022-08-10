@@ -1,12 +1,12 @@
 form {
     background-color: #fff;
-    padding: 20px;
+    padding: 2rem 3rem;
 }
 
 input {
     width: 100%;
     border: 1px solid #ccc;
-    padding: .9rem;
+    padding: .5rem .9rem;
     margin-block: .3rem;
     box-sizing: border-box;
 }
@@ -22,7 +22,7 @@ h2 {
 button {
     border: 1px solid #ccc;
     background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
-    padding: 1rem 3rem;
+    padding: .5rem 3rem;
     text-align: center;
     width: 100%;
     text-transform: uppercase;
@@ -32,12 +32,27 @@ button {
     box-shadow: 0 0 1.3rem #eee;
     box-sizing: border-box;
     display: block;
-    margin-block: .3rem;
+    margin-block: .5rem;
     cursor: pointer;
 }
 
 button:hover {
     background-position: right center;
     color: #fff;
+    text-decoration: none;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.disabled:hover {
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+}
+
+.link {
+    color: rgb(26, 25, 25);
     text-decoration: none;
 }

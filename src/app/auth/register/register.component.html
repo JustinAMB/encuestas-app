@@ -16,7 +16,7 @@
         <span *ngIf="fieldNotValidate('password')" class="text-danger">{{passwordErrorMsg}}</span>
     </div>
 
-    <button type="submit">Enviar</button>
+    <button type="submit" [ngClass]="{'disabled':form.invalid}">Enviar</button>
     <a routerLink="/auth" class="link">
         Ya tienes cuenta?
     </a>
