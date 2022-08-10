@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Crear encuesta</h2>
+    <div>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" placeholder="Nombre de la encuesta" formControlName="name">
+        <span *ngIf="fieldNotValidate('name')" class="text-danger">{{nameErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="finish">Fecha en la finaliza:</label>
+        <input type="date" id="finish" placeholder="Fecha en la que termina la encuesta" formControlName="finish">
+        <span *ngIf="fieldNotValidate('finish')" class="text-danger">{{finishErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="options">Opciones a votar:</label>
+        <textarea id="options" placeholder="Opciones a votar" formControlName="options"></textarea>
+        <span *ngIf="fieldNotValidate('options')" class="text-danger">{{optionsErrorMsg}}</span>
+    </div>
+    <button>Enviar</button>
+</form>
