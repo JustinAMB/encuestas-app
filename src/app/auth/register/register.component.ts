@@ -65,8 +65,8 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      const { email, password } = this.form.value;
-      this.auth.signin(email, password).subscribe(
+      const { email, password,name } = this.form.value;
+      this.auth.signup(name,email, password).subscribe(
         (resp:Resp)=>{
           if(resp.status===1){
             this.router.navigate(['/']);
