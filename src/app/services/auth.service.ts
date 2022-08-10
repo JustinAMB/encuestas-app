@@ -89,6 +89,28 @@ export class AuthService {
     );
 
   }
+  validate():Observable<boolean>{
+    const url=`/api/auth/validate`;
+    const header={
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.getToken()}`
+
+    }}
+    return this._http.get<Resp>(url,header).pipe(
+      map( (resp:Resp)=>{
+        if(resp.status===1){
+          this.setToken(resp.data.token);
+          this._user=resp.data as User;
+        }
+        return resp.status===1;
+      }),
+      catchError( (resp:Resp)=>{
+          return of(false);
+      })
+    );
+
+  }
   // set localStorages
   setToken(token:string){
     localStorage.setItem('token',token);
